@@ -11,17 +11,25 @@
 </head>
 
 <body>
-    <header>
-        <h1> Have a Rest - Try a Test</h1>
-        <h2> 10 questions. Two variants of answer. One winner.</h2>
-    </header>
+    <h1> Have a Rest - Try a Test</h1>
+    <h2> Few questions. Two variants of answer. One winner.</h2>
 
-    <section>
+    <h2>Choose your settings before start a quizz (otherwise you will get 5 easy questions about everything) </h2>
+    <nav>
+        <p>Difficulty [easy, medium, hard]</p>
+        <input type="text" id="difficulty" value="">
+        <p>Quantity [1-10]</p>
+        <input type="text" id="quantity" value="">
+        <p>Subject [9-26]</p>
+        <input type="text" id="subject" value="">
+        <button id="go"> GO!</button>
+    </nav>
+
+    <div id="content">
         <div id="question1"></div>
         <button id="trues"></button>
         <button id="falses"></button>
-    </section>
+    </div>
 </body>
 <script type="text/javascript" src="main.js"></script>
-
 </html>
