@@ -8,7 +8,7 @@
         background-color: #fefbd8;
         max-width: 800px;
         margin: 0 auto;
-        padding-top: 150px;
+        padding-top: 20px;
     }
 
     h1 {
@@ -36,6 +36,7 @@
         cursor: pointer;
         border-radius: 12px;
         margin-top: 15px;
+        display:none;
     }
 
     #question1 {
@@ -43,4 +44,8 @@
         color: #36486b;
         font-weight: bold;
         margin-top: 20px;
+        display:none;
+    }
+    button#go{
+        display:block;
     }
