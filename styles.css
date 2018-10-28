@@ -32,7 +32,7 @@ h2 {
 }
 
 h1, h2 {
-    color: #618685;
+    color:  #39398a;
 }
 
 button {
@@ -51,6 +51,11 @@ button {
     display:none;
 }
 
+p {
+    color: #314979;
+    font-weight: bold;
+}
+
 #question1 {
     font-size: 30px;
     color: #36486b;
@@ -61,5 +66,5 @@ button {
 
 button#go{
     display:block;
-    background-color: red;
+    background-color:gray;
 }

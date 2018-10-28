@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    difficulty.onblur = function () {
+    difficulty.oninput = function () {
         if (isValidDifficulty(this.value)) {
             hideErrorMessage(this, 0);
         } else {
@@ -67,11 +67,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function setGo() {
         if ((difficulty.className !== "error")
             && (quantity.className !== "error")
-            && (subject.className !== "error")) {
-            goButton.style.backgroundColor = "yellow";
+            && (subject.className !== "error")
+            && difficulty.value !== ""
+            && quantity.value !== ""
+            && subject.value !=="") {
+            goButton.style.backgroundColor = "#4040a1";
             goButton.disabled = false;
         } else {
-            goButton.style.backgroundColor = "grey";
+            goButton.style.backgroundColor = "gray";
             goButton.disabled = true;
         }
     }
@@ -91,8 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         else {
             document.body.innerHTML = "THE END. YOUR SCORE is " + score + " of " + quizz.results.length;
-            document.body.setAttribute("style", "width: 100%; margin:0 auto; font-weight:bold; font-size: 100px; color: white; background-imquantity: url('https://res.cloudinary.com/simpleview/imquantity/upload/crm/poconos/Holiday-Independence-Day-Fireworks-Lake-Wallenpaupack-2-PoconoMtns01_e6c78873-9f82-6be5-8281f3b4afedd280.jpg');background-repeat: no-repeat; background-size:cover;");
-            // setInterval(function(){ location.reload(); }, 200); 
+            document.body.setAttribute("style", "width: 100%; margin:0 auto; font-weight:bold; font-size: 100px; color: white; background-image: url('https://upperarlingtonoh.gov/wp-content/uploads/2018/06/Fireworks.jpg'); background-repeat: no-repeat; background-size:cover");
+            setInterval(function(){ location.reload(); }, 3000); 
         }
     };
 
