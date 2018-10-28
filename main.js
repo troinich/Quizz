@@ -3,57 +3,61 @@ document.addEventListener('DOMContentLoaded', function () {
     var quizz;
     var score = 0;
     var x = 0;
+
+    goButton = document.getElementById('go')
     var allErrorMess = document.getElementsByClassName("errorMess");
 
-    
-    
-    difficulty.onblur = function () {
-        if (!isNaN(this.value)) { // if input is a number
-            // show mistake
-            this.classList.add("error");
-            document.getElementsByClassName("errorMess")[0].style.display = "block";
-            //get back a focus
-            difficulty.focus();
+    function showErrorMessage(caller, inputIndex) {
+        caller.classList.add("error");
+        allErrorMess[inputIndex].style.display = "block";
+
+        caller.focus();
+    }
+
+    function removeErrorMessage(caller, inputIndex) {
+        caller.classList.remove("error");
+        elem = document.getElementsByClassName("errorMess")[inputIndex];
+        elem.style.display = "none";
+    }
+
+    difficulty.oninput = function () {
+        if (!isNaN(this.value)) {
+            showErrorMessage(this, 0);
         } else {
-            this.classList.remove("error");
-            document.getElementsByClassName("errorMess")[0].style.display = "none";
-            document.getElementsByClassName("errorMess")[0].style.color = "white";
+            removeErrorMessage(this, 0);
         }
+        setGo();
     };
 
-    quantity.onblur = function () {
+    quantity.oninput = function () {
         if (isNaN(this.value)) { // input is not a number
-            this.classList.add("error");
-            allErrorMess[1].style.display = "block";
-            quantity.focus();
+            showErrorMessage(this, 1);
         } else {
-            this.classList.remove("error");
-            document.getElementsByClassName("errorMess")[1].style.display = "none";
-            document.getElementsByClassName("errorMess")[1].style.color = "white";
+            removeErrorMessage(this, 1);
         }
     };
 
-    subject.onblur = function () {
+    subject.oninput = function () {
         if (!isNaN(this.value)) { // if input is a number
-            this.classList.add("error");
-            allErrorMess[2].style.display = "block";
-            subject.focus();
+            showErrorMessage(this, 2);
         } else {
-            this.classList.remove("error");
-            document.getElementsByClassName("errorMess")[2].style.display = "none";
-            document.getElementsByClassName("errorMess")[2].style.color = "white";
+            removeErrorMessage(this, 2);
         }
         setGo();
     };
 
     function setGo() {
-        if ((difficulty.value !== "") && (quantity.value !== "") && (subject.value !== "")) {
-            document.getElementById('go').style.backgroundColor = "yellow";
-            document.getElementById('go').disabled = false;
+        if ((difficulty.className !== "error")
+            && (quantity.className !== "error")
+            && (subject.className !== "error")) {
+            goButton.style.backgroundColor = "yellow";
+            goButton.disabled = false;
+        } else {
+            goButton.style.backgroundColor = "grey";
+            goButton.disabled = true;
         }
     }
 
-    setGo();
 
 
     function display(x) {
