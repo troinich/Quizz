@@ -1,63 +1,65 @@
+body {
+    max-width: 100%;
+    margin: 0 auto;
+}
 
-    body {
-        max-width: 100%;
-        margin: 0 auto;
-    }
+.errorMess {
+    display: none;
+}
 
-    .errorMess {
-        display: none;
-    }
 .error{
-background-color: red;
-color:wheat}
+    background-color: red;
+    color:rgb(245, 222, 179);
+}
 
 input::placeholder {
     font-style: italic;
-  }
+}
 
-    body {
-        background-color: #fefbd8;
-        max-width: 800px;
-        margin: 0 auto;
-        padding-top: 20px;
-    }
+body {
+    background-color: #fefbd8;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
 
-    h1 {
-        font-size: 35px;
-    }
+h1 {
+    font-size: 35px;
+}
 
-    h2 {
-        font-size: 25px;
-    }
+h2 {
+    font-size: 25px;
+}
 
-    h1, h2 {
-        color: #618685;
-    }
+h1, h2 {
+    color: #618685;
+}
 
-    button {
-        background-color: #4040a1;
-        border: none;
-        color: #fefbd8;
-        padding: 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 30px;
-        margin: 4px;
-        cursor: pointer;
-        border-radius: 12px;
-        margin-top: 15px;
-        display:none;
-    }
+button {
+    background-color: #4040a1;
+    border: none;
+    color: #fefbd8;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-top: 15px;
+    display:none;
+}
 
-    #question1 {
-        font-size: 30px;
-        color: #36486b;
-        font-weight: bold;
-        margin-top: 20px;
-        display:none;
-    }
-    button#go{
-        display:block;
-        background-color: red;
-    }
+#question1 {
+    font-size: 30px;
+    color: #36486b;
+    font-weight: bold;
+    margin-top: 20px;
+    display:none;
+}
+
+button#go{
+    display:block;
+    background-color: red;
+}
