@@ -4,9 +4,16 @@
         margin: 0 auto;
     }
 
+    .errorMess {
+        display: none;
+    }
 .error{
-    display:none;
-}
+background-color: red;
+color:wheat}
+
+input::placeholder {
+    font-style: italic;
+  }
 
     body {
         background-color: #fefbd8;
@@ -52,4 +59,5 @@
     }
     button#go{
         display:block;
+        background-color: red;
     }
