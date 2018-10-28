@@ -23,19 +23,37 @@
 
         };
 
-        function selectedOrDefault(val, dflt) {
-            if (val == "") {
-                return dflt
-            } else {
-                return val
-            }
-        }
+allowedDiff = ["easy", "medium", "hard"];
+//var allErrors = document.getElementsByClassName("error");
+//var difError = allErrors[0];
+//var defDiff = "easy";
+//function ifDif () {
+//var ID = document.getElementById('difficulty').value;
+/* ID = ID.toLowerCase();
+if (allowedDiff.includes(ID) === true) {
+    console.log("In array")
+    return ID}
+    else {return defDiff}; //difError.style.display = "block" ||);
+}; */
+
+
+var val = document.getElementById('difficulty').value;
+val = val.toLowerCase();
+function selectedOrDefault(val, dflt) {
+    if (val == "") {
+        return dflt
+    }
+    else {
+        val = val.toLowerCase().trim();
+        return (allowedDiff.includes(val) ? val:dflt);
+    }
+}
 
         function setComplex() {
             var difficulty = selectedOrDefault(
                 document.getElementById("difficulty").value, 'easy')
 
-            var quantity = selectedOrDefault(
+                var quantity = selectedOrDefault(
                 document.getElementById("quantity").value, 5)
 
             var subject = selectedOrDefault(
@@ -62,6 +80,8 @@
         }
 
         document.getElementById("go").addEventListener("click", () => {
+            document.getElementById("go").disabled = true;
+            document.getElementById("go").style.backgroundColor = "grey";
             setComplex();
         });
 

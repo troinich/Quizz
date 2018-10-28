@@ -4,6 +4,10 @@
         margin: 0 auto;
     }
 
+.error{
+    display:none;
+}
+
     body {
         background-color: #fefbd8;
         max-width: 800px;
